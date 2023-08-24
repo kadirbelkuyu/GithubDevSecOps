@@ -6,26 +6,16 @@ on:
       - '**/*.md'
       - '**/*.txt'
   workflow_dispatch:
-  
+
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-latest # Bu, çalıştırılacak işlemci türünü belirtir. 
-
-    steps:
-    # Bu adım, yerel repoyu checkout eder. Nested workflow'ları çalıştırmadan önce bu adım genellikle gereklidir.
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-
-    # İç içe olan workflow'u çağırmak için bu adımı kullanın.
-    - name: Call Build Workflow
-      uses: ./.github/workflows/build.yml@main
-      with:
-        # Diğer argümanlarınız varsa buraya ekleyin
-      secrets:
-        inherit: true
-      permissions:
-        contents: read
-        issues: read
-        checks: write
-        pull-requests: write
+    uses: ./.github/workflows/build.yml@main
+    with:
+      # Eğer build.yml'ye argümanlar göndermeniz gerekiyorsa buraya ekleyin
+    secrets:
+      inherit: true
+    permissions:
+      contents: read
+      issues: read
+      checks: write
+      pull-requests: write
