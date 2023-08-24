@@ -10,5 +10,22 @@ on:
 jobs:
   build:
     name: Build
-    uses: ./.github/workflows/build.yml
-    secrets: inherit #https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idsecretsinherit
+    runs-on: ubuntu-latest # Bu, çalıştırılacak işlemci türünü belirtir. 
+
+    steps:
+    # Bu adım, yerel repoyu checkout eder. Nested workflow'ları çalıştırmadan önce bu adım genellikle gereklidir.
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    # İç içe olan workflow'u çağırmak için bu adımı kullanın.
+    - name: Call Build Workflow
+      uses: ./.github/workflows/build.yml@main
+      with:
+        # Diğer argümanlarınız varsa buraya ekleyin
+      secrets:
+        inherit: true
+      permissions:
+        contents: read
+        issues: read
+        checks: write
+        pull-requests: write
