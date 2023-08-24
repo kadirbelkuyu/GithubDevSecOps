@@ -9,9 +9,9 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build.yml@main
-    with:
-      # Eğer build.yml'ye argümanlar göndermeniz gerekiyorsa buraya ekleyin
+    uses: ./.github/workflows/build.yml
+    # with:
+    #   # Eğer build.yml'ye argümanlar göndermeniz gerekiyorsa buraya ekleyin
     secrets:
       inherit: true
     permissions:
