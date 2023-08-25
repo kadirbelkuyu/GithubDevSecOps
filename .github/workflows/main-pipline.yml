@@ -42,4 +42,15 @@ jobs:
       actions: read
       contents: read
       security-events: write
-      
+
+  license-compliance:    
+      needs: build
+      name: License Compliance
+      uses: ./.github/workflows/license-compliance.yml
+      permissions:
+        contents: read
+        issues: read
+        checks: write
+        pull-requests: write
+      # screets:
+      #   #inherit: true
