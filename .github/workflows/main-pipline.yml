@@ -26,8 +26,8 @@ jobs:
     uses: ./.github/workflows/sca.yml
     # with:
     #   # Eğer sca.yml'ye argümanlar göndermeniz gerekiyorsa buraya ekleyin
-    secrets:
-      inherit: true
+    # secrets:
+    #   inherit: true
     permissions:
       contents: read
       issues: read
@@ -38,5 +38,5 @@ jobs:
     needs: build
     name: Static Application Security Testing
     uses: ./.github/workflows/sast.yml
-    secrets:
-      inherit: true
+    # secrets:
+    #   inherit: true
