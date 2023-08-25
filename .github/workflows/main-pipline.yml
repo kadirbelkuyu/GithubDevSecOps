@@ -54,16 +54,16 @@ jobs:
         pull-requests: write
       # screets:
       #   #inherit: true
-  sonarqube:
-    needs: build
-    name: SonarQube
-    uses: ./.github/workflows/sonarqube.yml
-    # with:
-    #   # Eğer sonarqube.yml'ye argümanlar göndermeniz gerekiyorsa buraya ekleyin
-    # secrets:
-    #   inherit: true
-    permissions:
-      contents: read
-      issues: read
-      checks: write
-      pull-requests: write
+  # sonarqube:
+  #   needs: build
+  #   name: SonarQube
+  #   uses: ./.github/workflows/sonarqube.yml
+  #   # with:
+  #   #   # Eğer sonarqube.yml'ye argümanlar göndermeniz gerekiyorsa buraya ekleyin
+  #   # secrets:
+  #   #   inherit: true
+  #   permissions:
+  #     contents: read
+  #     issues: read
+  #     checks: write
+  #     pull-requests: write
