@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       # # Initializes the CodeQL tools for scanning.
       - name: Initialize CodeQL
@@ -75,7 +75,7 @@ jobs:
       security-events: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Run SpotBugs action
       uses: jmservera/spotbugs-github-action@v0.1.0-alpha
       with:
@@ -113,7 +113,7 @@ jobs:
 
     steps:
       # Fetch project source with GitHub Actions Checkout.
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: semgrep ci -v -o results.sarif --sarif || true
         env:
           # Add the rules that Semgrep uses by setting the SEMGREP_RULES environment variable. 
