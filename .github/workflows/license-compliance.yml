@@ -21,7 +21,7 @@ jobs:
                             hamcrest,hamcrest-core,hamcrest-library
                             junit-jupiter,junit-jupiter-api,junit-jupiter-engine,javax.annotation-api
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2.2.0
+        uses: EnricoMi/publish-unit-test-result-action@v2.11.0
         if: always()
         with:
           junit_files: "license_finder_report.xml"
